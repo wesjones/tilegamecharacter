@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tile Game Board</title>
+    <link rel="stylesheet" type="text/css" href="build/rpg-character.css">
+    <script src="build/rpg-character.js"></script>
+</head>
+<body>
+<a href="https://github.com/wesjones/rpg-character">Github</a><br/>
+<b>bower:</b> <span style="border:1px solid #999;padding:2px;background:#EFEFEF;color:#333;">bower install rpg-character</span>
+
+<ul>
+    <li>Use Arrow Keys to move player (red square)</li>
+    <li>View page source for how to use.</li>
+</ul>
+
+<div class="container" style="margin: 40px;position: relative;"></div>
+<script>
+
+    var perRow = 10;
+    var manYOffset = 4;
+    var tileSize = 64;
+    var keys = [87, 68, 83, 65];/* W,  A,  S,  D,  F,  E */
+    var skeleton = [];
+    var man = [];
+    var characters = [];
+    var accessories = [
+        'quiver',
+
+        'belt-leather',
+        'belt-rope',
+
+        'shoes-armor',
+        'shoes-leather',
+
+        'hands-armor',
+
+        'head-chain-armor-helmet',
+        'head-chain-armor-hood',
+        'head-hair-blond',
+        'head-leather-armor-hat',
+        'head-plate-armor-helmet',
+        'head-robe-hood',
+
+        'legs-green',
+        'legs-plate-armor',
+        'legs-robe-skirt',
+
+        'torso-chain-armor-jacket-purple',
+        'torso-chain-armor',
+        'torso-leather-armor-bracers',
+        'torso-leather-armor-shirt-white',
+        'torso-leather-armor-shoulders',
+        'torso-leather-armor-torso',
+        'torso-plate-armor-arms-shoulders',
+        'torso-plate-armor-torso',
+        'torso-robe-shirt-brown',
+
+        'weapon-shield-cutout-body',
+        'weapon-shield-cutout-chain-armor-helmet',
+        'weapon-rapier',
+        'weapon-longsword',
+        'weapon-long-spear',
+        'weapon-spear',
+        'weapon-staff',
+        'weapon-bow',
+    ];
+
+    skeleton.push(rpgc.create('skeleton', 0, 0, keys, 0.1).addAction('slash', 70).addAction('bow', 71).addAction('spellcast', 73).addAction('hurt', 72, 'dead'));
+    man.push(rpgc.create('man', 0, manYOffset, keys, 0.1).addAction('slash', 70).addAction('thrust', 69).addAction('bow', 71).addAction('spellcast', 73).addAction('hurt', 72, 'dead'));
+
+    accessories.forEach(function(name) {
+        skeleton.push(rpgc.create('skeleton', skeleton.length%perRow, Math.floor(skeleton.length/perRow), keys, 0.1).addAccessory(name).addAction('slash', 70).addAction('bow', 71).addAction('spellcast', 73).addAction('hurt', 72, 'dead'));
+        man.push(rpgc.create('man', man.length%perRow, Math.floor(man.length/perRow) + manYOffset, keys, 0.1).addAccessory(name).addAction('slash', 70).addAction('thrust', 69).addAction('bow', 71).addAction('spellcast', 73).addAction('hurt', 72, 'dead'));
+    });
+
+    // cloak character.
+    skeleton.push(rpgc.create('skeleton', skeleton.length % perRow, Math.floor(skeleton.length / perRow), keys, 0.1).
+        addAccessory('head-hair-blond').
+        addAccessory('head-robe-hood').
+        addAccessory('legs-robe-skirt').
+        addAccessory('torso-robe-shirt-brown').
+        addAccessory('belt-rope').
+        addAction('spellcast', 70).
+        addAction('hurt', 72, 'dead')
+    );
+    man.push(rpgc.create('man', man.length % perRow, Math.floor(man.length / perRow) + manYOffset, keys, 0.1).
+        addAccessory('head-hair-blond').
+        addAccessory('head-robe-hood').
+        addAccessory('legs-robe-skirt').
+        addAccessory('torso-robe-shirt-brown').
+        addAccessory('belt-rope').
+        addAction('spellcast', 70).
+        addAction('hurt', 72, 'dead')
+    );
+
+    // normal character
+    skeleton.push(rpgc.create('skeleton', skeleton.length % perRow, Math.floor(skeleton.length / perRow), keys, 0.1).
+        addAccessory('head-hair-blond').
+        addAccessory('legs-green').
+        addAccessory('torso-leather-armor-shirt-white').
+        addAccessory('weapon-rapier').
+        addAction('slash', 70).
+        addAction('hurt', 72, 'dead')
+    );
+    man.push(rpgc.create('man', man.length % perRow, Math.floor(man.length / perRow) + manYOffset, keys, 0.1).
+        addAccessory('head-hair-blond').
+
+        addAccessory('legs-green').
+        addAccessory('torso-leather-armor-shirt-white').
+        addAccessory('weapon-staff').
+        addAction('thrust', 70).
+        addAction('hurt', 72, 'dead')
+    );
+
+    // archer - leather armor
+    skeleton.push(rpgc.create('skeleton', skeleton.length % perRow, Math.floor(skeleton.length / perRow), keys, 0.1).
+        addAccessory('head-hair-blond').
+        addAccessory('legs-green').
+        addAccessory('head-leather-armor-hat').
+        addAccessory('torso-leather-armor-torso').
+        addAccessory('torso-leather-armor-shoulders').
+        addAccessory('torso-leather-armor-bracers').
+        addAccessory('shoes-leather').
+        addAccessory('quiver').
+        addAccessory('weapon-bow').
+        addAction('bow', 70).
+        addAction('hurt', 72, 'dead')
+    );
+    man.push(rpgc.create('man', man.length % perRow, Math.floor(man.length / perRow) + manYOffset, keys, 0.1).
+        addAccessory('head-hair-blond').
+        addAccessory('legs-green').
+        addAccessory('head-leather-armor-hat').
+        addAccessory('torso-leather-armor-torso').
+        addAccessory('torso-leather-armor-shoulders').
+        addAccessory('torso-leather-armor-bracers').
+        addAccessory('shoes-leather').
+        addAccessory('quiver').
+        addAccessory('weapon-bow').
+        addAction('bow', 70).
+        addAction('hurt', 72, 'dead')
+    );
+
+    // longsword - chain mail
+    skeleton.push(rpgc.create('skeleton', skeleton.length % perRow, Math.floor(skeleton.length / perRow), keys, 0.1).
+        addAccessory('head-chain-armor-hood').
+        addAccessory('head-chain-armor-helmet').
+        addAccessory('legs-green').
+        addAccessory('torso-chain-armor').
+        addAccessory('torso-chain-armor-jacket-purple').
+        addAccessory('shoes-armor').
+        addAccessory('weapon-shield-cutout-chain-armor-helmet').
+        addAccessory('weapon-longsword').
+        addAction('slash', 70).
+        addAction('hurt', 72, 'dead')
+    );
+    man.push(rpgc.create('man', man.length % perRow, Math.floor(man.length / perRow) + manYOffset, keys, 0.1).
+        addAccessory('head-chain-armor-hood').
+        addAccessory('head-chain-armor-helmet').
+        addAccessory('legs-green').
+        addAccessory('torso-chain-armor').
+        addAccessory('torso-chain-armor-jacket-purple').
+        addAccessory('shoes-armor').
+        addAccessory('weapon-shield-cutout-chain-armor-helmet').
+        addAccessory('weapon-longsword').
+        addAction('slash', 70).
+        addAction('hurt', 72, 'dead')
+    );
+
+    // long-spear - full-armor
+    skeleton.push(rpgc.create('skeleton', skeleton.length % perRow, Math.floor(skeleton.length / perRow), keys, 0.1).
+        addAccessory('head-plate-armor-helmet').
+        addAccessory('legs-plate-armor').
+        addAccessory('shoes-armor').
+        addAccessory('torso-plate-armor-torso').
+        addAccessory('torso-plate-armor-arms-shoulders').
+        addAccessory('hands-armor').
+        addAccessory('weapon-long-spear').
+        addAction('thrust', 70).
+        addAction('hurt', 72, 'dead')
+    );
+    man.push(rpgc.create('man', man.length % perRow, Math.floor(man.length / perRow) + manYOffset, keys, 0.1).
+        addAccessory('head-plate-armor-helmet').
+        addAccessory('legs-plate-armor').
+        addAccessory('shoes-armor').
+        addAccessory('torso-plate-armor-torso').
+        addAccessory('torso-plate-armor-arms-shoulders').
+        addAccessory('hands-armor').
+        addAccessory('weapon-long-spear').
+        addAction('thrust', 70).
+        addAction('hurt', 72, 'dead')
+    );
+
+    characters.push(rpgc.create('goblin', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAccessory("weapon-knife").addAction('jab', 70).addAction('hurt', 71, 'dead'));
+
+    characters = characters.concat(skeleton, man);
+    characters.forEach(function(char) {
+        char.on(rpgc.events.ACTION_END, function(evt, action) {
+            if (action.name === "bow") {
+                console.log('shoot');
+            }
+        });
+        document.querySelector(".container").appendChild(char.el);
+    });
+
+
+    window.addEventListener("keydown", function(event) {
+        console.log(event.keyCode);
+        characters.forEach(function(char) {
+            char.handleKeyDown(event.keyCode);
+        });
+    });
+    window.addEventListener("keyup", function(event) {
+        characters.forEach(function(char) {
+            char.handleKeyUp(event.keyCode);
+        });
+    });
+
+    setInterval(function() {
+        characters.forEach(function(char) {
+            char.el.style.top = char.y * tileSize + "px";
+            char.el.style.left = char.x * tileSize + "px";
+            char.render();
+        });
+    }, 20);
+
+</script>
+</body>
+</html>

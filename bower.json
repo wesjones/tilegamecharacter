@@ -1,0 +1,23 @@
+{
+  "name": "tilegamecharacter",
+  "description": "Tile Game Character",
+  "main": "index.html",
+  "authors": [
+    "Wes Jones <cybus10@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "game",
+    "rpg",
+    "character"
+  ],
+  "homepage": "https://github.com/wesjones/rpg-character",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

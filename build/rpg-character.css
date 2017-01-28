@@ -1,0 +1,1667 @@
+.character {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+.body,
+.accessory {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  z-index: 1;
+}
+.man {
+  /* 192x192 images */
+  /* animations */
+  /* walk */
+  /* weapons */
+}
+.man.up .body,
+.man.up .accessory {
+  background-position: 0 0;
+}
+.man.up .body.quiver,
+.man.up .accessory.quiver {
+  z-index: 2;
+}
+.man.up .body.weapon-rapier,
+.man.up .accessory.weapon-rapier,
+.man.up .body.weapon-long-spear,
+.man.up .accessory.weapon-long-spear,
+.man.up .body.weapon-longsword,
+.man.up .accessory.weapon-longsword,
+.man.up .body.weapon-spear,
+.man.up .accessory.weapon-spear,
+.man.up .body.weapon-staff,
+.man.up .accessory.weapon-staff {
+  z-index: 0;
+}
+.man.left .body,
+.man.left .accessory {
+  background-position: 0px -64px;
+}
+.man.left .body.quiver,
+.man.left .accessory.quiver {
+  z-index: 0;
+}
+.man.left .body.weapon-rapier,
+.man.left .accessory.weapon-rapier,
+.man.left .body.weapon-long-spear,
+.man.left .accessory.weapon-long-spear,
+.man.left .body.weapon-longsword,
+.man.left .accessory.weapon-longsword,
+.man.left .body.weapon-spear,
+.man.left .accessory.weapon-spear,
+.man.left .body.weapon-staff,
+.man.left .accessory.weapon-staff {
+  z-index: 2;
+}
+.man.down .body,
+.man.down .accessory {
+  background-position: 0px -128px;
+}
+.man.down .body.quiver,
+.man.down .accessory.quiver {
+  z-index: 0;
+}
+.man.down .body.weapon-rapier,
+.man.down .accessory.weapon-rapier,
+.man.down .body.weapon-long-spear,
+.man.down .accessory.weapon-long-spear,
+.man.down .body.weapon-longsword,
+.man.down .accessory.weapon-longsword,
+.man.down .body.weapon-spear,
+.man.down .accessory.weapon-spear,
+.man.down .body.weapon-staff,
+.man.down .accessory.weapon-staff {
+  z-index: 2;
+}
+.man.right .body,
+.man.right .accessory {
+  background-position: 0px -192px;
+}
+.man.right .body.quiver,
+.man.right .accessory.quiver {
+  z-index: 0;
+}
+.man.right .body.weapon-rapier,
+.man.right .accessory.weapon-rapier,
+.man.right .body.weapon-long-spear,
+.man.right .accessory.weapon-long-spear,
+.man.right .body.weapon-longsword,
+.man.right .accessory.weapon-longsword,
+.man.right .body.weapon-spear,
+.man.right .accessory.weapon-spear,
+.man.right .body.weapon-staff,
+.man.right .accessory.weapon-staff {
+  z-index: 2;
+}
+.man .accessory.weapon-rapier,
+.man .accessory.weapon-longsword,
+.man .accessory.weapon-long-spear {
+  top: -64px;
+  left: -64px;
+  width: 192px;
+  height: 192px;
+}
+.man.up .accessory.weapon-rapier,
+.man.up .accessory.weapon-longsword,
+.man.up .accessory.weapon-long-spear {
+  background-position-y: 0px;
+}
+.man.left .accessory.weapon-rapier,
+.man.left .accessory.weapon-longsword,
+.man.left .accessory.weapon-long-spear {
+  background-position-y: -192px;
+}
+.man.down .accessory.weapon-rapier,
+.man.down .accessory.weapon-longsword,
+.man.down .accessory.weapon-long-spear {
+  background-position-y: -384px;
+}
+.man.right .accessory.weapon-rapier,
+.man.right .accessory.weapon-longsword,
+.man.right .accessory.weapon-long-spear {
+  background-position-y: -576px;
+}
+.man.walk .body,
+.man.walk .accessory {
+  animation: man-walk 0.5s steps(8) infinite;
+}
+.man.walk .body.weapon-rapier,
+.man.walk .accessory.weapon-rapier,
+.man.walk .body.weapon-longsword,
+.man.walk .accessory.weapon-longsword,
+.man.walk .body.weapon-long-spear,
+.man.walk .accessory.weapon-long-spear {
+  width: 192px;
+  height: 192px;
+}
+.man.walk .body.weapon-rapier,
+.man.walk .accessory.weapon-rapier,
+.man.walk .body.weapon-longsword,
+.man.walk .accessory.weapon-longsword,
+.man.walk .body.weapon-long-spear,
+.man.walk .accessory.weapon-long-spear,
+.man.walk .body.weapon-spear,
+.man.walk .accessory.weapon-spear,
+.man.walk .body.weapon-staff,
+.man.walk .accessory.weapon-staff,
+.man.walk .body.weapon-bow,
+.man.walk .accessory.weapon-bow {
+  animation: none;
+}
+@keyframes walk {
+  to {
+    background-position-x: -512px;
+  }
+}
+@keyframes man-slash {
+  to {
+    background-position-x: -384px;
+  }
+}
+@keyframes man-slash-weapon {
+  to {
+    background-position-x: -1152px;
+  }
+}
+@keyframes man-thrust {
+  to {
+    background-position-x: -448px;
+  }
+}
+@keyframes man-thrust-weapon {
+  to {
+    background-position-x: -1344px;
+  }
+}
+@keyframes man-bow {
+  to {
+    background-position-x: -768px;
+  }
+}
+@keyframes man-spellcast {
+  to {
+    background-position-x: -384px;
+  }
+}
+@keyframes man-hurt {
+  to {
+    background-position-x: -384px;
+  }
+}
+.man.action.slash .body,
+.man.action.slash .accessory {
+  animation: man-slash 0.4s steps(6) forwards;
+}
+.man.action.slash .body.weapon-rapier,
+.man.action.slash .accessory.weapon-rapier,
+.man.action.slash .body.weapon-longsword,
+.man.action.slash .accessory.weapon-longsword {
+  /* 192x192 */
+  animation: man-slash-weapon 0.4s steps(6) forwards;
+}
+.man.action.thrust .body,
+.man.action.thrust .accessory {
+  animation: man-thrust 0.5s steps(7) forwards;
+}
+.man.action.thrust .body.weapon-long-spear,
+.man.action.thrust .accessory.weapon-long-spear {
+  /* 192x192 */
+  animation: man-thrust-weapon 0.5s steps(7) forwards;
+}
+.man.action.bow .body,
+.man.action.bow .accessory {
+  animation: man-bow 1s steps(12) forwards;
+}
+.man.action.spellcast .body,
+.man.action.spellcast .accessory {
+  animation: man-spellcast 1s steps(6) forwards;
+}
+.man.action.hurt .body,
+.man.action.hurt .accessory {
+  animation: man-hurt 1s steps(6) forwards;
+}
+.man .body {
+  background-image: url(../assets/lpc_entry/png/walkcycle/BODY_male.png);
+}
+.man .quiver {
+  background-image: url(../assets/lpc_entry/png/walkcycle/BEHIND_quiver.png);
+}
+.man .belt-leather {
+  background-image: url(../assets/lpc_entry/png/walkcycle/BELT_leather.png);
+}
+.man .belt-rope {
+  background-image: url(../assets/lpc_entry/png/walkcycle/BELT_rope.png);
+}
+.man .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/walkcycle/FEET_plate_armor_shoes.png);
+}
+.man .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/walkcycle/FEET_shoes_brown.png);
+}
+.man .hands-armor {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HANDS_plate_armor_gloves.png);
+}
+.man .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_chain_armor_helmet.png);
+}
+.man .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_chain_armor_hood.png);
+}
+.man .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_hair_blonde.png);
+}
+.man .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_leather_armor_hat.png);
+}
+.man .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_plate_armor_helmet.png);
+}
+.man .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_robe_hood.png);
+}
+.man .legs-green {
+  background-image: url(../assets/lpc_entry/png/walkcycle/LEGS_pants_greenish.png);
+}
+.man .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/walkcycle/LEGS_plate_armor_pants.png);
+}
+.man .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/walkcycle/LEGS_robe_skirt.png);
+}
+.man .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_chain_armor_jacket_purple.png);
+}
+.man .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_chain_armor_torso.png);
+}
+.man .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_leather_armor_bracers.png);
+}
+.man .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_leather_armor_shirt_white.png);
+}
+.man .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_leather_armor_shoulders.png);
+}
+.man .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_leather_armor_torso.png);
+}
+.man .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_plate_armor_arms_shoulders.png);
+}
+.man .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_plate_armor_torso.png);
+}
+.man .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_robe_shirt_brown.png);
+}
+.man .weapon-shield-cutout-body {
+  background-image: url(../assets/lpc_entry/png/walkcycle/WEAPON_shield_cutout_body.png);
+}
+.man .weapon-shield-cutout-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/walkcycle/WEAPON_shield_cutout_chain_armor_helmet.png);
+}
+.man .weapon-rapier {
+  background-image: url(../assets/lpc_entry/png/192x192/slash/WEAPON_rapier.png);
+}
+.man .weapon-longsword {
+  background-image: url(../assets/lpc_entry/png/192x192/slash/WEAPON_longsword.png);
+}
+.man .weapon-long-spear {
+  background-image: url(../assets/lpc_entry/png/192x192/thrust/WEAPON_long_spear.png);
+}
+.man .weapon-spear {
+  background-image: url(../assets/lpc_entry/png/thrust/WEAPON_spear.png);
+}
+.man .weapon-staff {
+  background-image: url(../assets/lpc_entry/png/thrust/WEAPON_staff.png);
+}
+.man .weapon-bow {
+  background-image: url(../assets/lpc_entry/png/bow/WEAPON_bow.png);
+}
+.man.slash .body {
+  background-image: url(../assets/lpc_entry/png/slash/BODY_male.png);
+}
+.man.slash .quiver {
+  background-image: url(../assets/lpc_entry/png/slash/BEHIND_quiver.png);
+}
+.man.slash .belt-leather {
+  background-image: url(../assets/lpc_entry/png/slash/BELT_leather.png);
+}
+.man.slash .belt-rope {
+  background-image: url(../assets/lpc_entry/png/slash/BELT_rope.png);
+}
+.man.slash .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/slash/FEET_plate_armor_shoes.png);
+}
+.man.slash .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/slash/FEET_shoes_brown.png);
+}
+.man.slash .hands-armor {
+  background-image: url(../assets/lpc_entry/png/slash/HANDS_plate_armor_gloves.png);
+}
+.man.slash .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_chain_armor_helmet.png);
+}
+.man.slash .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_chain_armor_hood.png);
+}
+.man.slash .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_hair_blonde.png);
+}
+.man.slash .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_leather_armor_hat.png);
+}
+.man.slash .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_plate_armor_helmet.png);
+}
+.man.slash .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_robe_hood.png);
+}
+.man.slash .legs-green {
+  background-image: url(../assets/lpc_entry/png/slash/LEGS_pants_greenish.png);
+}
+.man.slash .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/slash/LEGS_plate_armor_pants.png);
+}
+.man.slash .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/slash/LEGS_robe_skirt.png);
+}
+.man.slash .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_chain_armor_jacket_purple.png);
+}
+.man.slash .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_chain_armor_torso.png);
+}
+.man.slash .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_leather_armor_bracers.png);
+}
+.man.slash .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_leather_armor_shirt_white.png);
+}
+.man.slash .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_leather_armor_shoulders.png);
+}
+.man.slash .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_leather_armor_torso.png);
+}
+.man.slash .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_plate_armor_arms_shoulders.png);
+}
+.man.slash .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_plate_armor_torso.png);
+}
+.man.slash .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_robe_shirt_brown.png);
+}
+.man.slash .weapon-shield-cutout-body {
+  background-image: url(../assets/lpc_entry/png/slash/WEAPON_shield_cutout_body.png);
+}
+.man.slash .weapon-shield-cutout-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/slash/WEAPON_shield_cutout_chain_armor_helmet.png);
+}
+.man.thrust .body {
+  background-image: url(../assets/lpc_entry/png/thrust/BODY_male.png);
+}
+.man.thrust .quiver {
+  background-image: url(../assets/lpc_entry/png/thrust/BEHIND_quiver.png);
+}
+.man.thrust .belt-leather {
+  background-image: url(../assets/lpc_entry/png/thrust/BELT_leather.png);
+}
+.man.thrust .belt-rope {
+  background-image: url(../assets/lpc_entry/png/thrust/BELT_rope.png);
+}
+.man.thrust .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/thrust/FEET_plate_armor_shoes.png);
+}
+.man.thrust .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/thrust/FEET_shoes_brown.png);
+}
+.man.thrust .hands-armor {
+  background-image: url(../assets/lpc_entry/png/thrust/HANDS_plate_armor_gloves.png);
+}
+.man.thrust .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_chain_armor_helmet.png);
+}
+.man.thrust .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_chain_armor_hood.png);
+}
+.man.thrust .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_hair_blonde.png);
+}
+.man.thrust .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_leather_armor_hat.png);
+}
+.man.thrust .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_plate_armor_helmet.png);
+}
+.man.thrust .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_robe_hood.png);
+}
+.man.thrust .legs-green {
+  background-image: url(../assets/lpc_entry/png/thrust/LEGS_pants_greenish.png);
+}
+.man.thrust .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/thrust/LEGS_plate_armor_pants.png);
+}
+.man.thrust .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/thrust/LEGS_robe_skirt.png);
+}
+.man.thrust .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_chain_armor_jacket_purple.png);
+}
+.man.thrust .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_chain_armor_torso.png);
+}
+.man.thrust .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_leather_armor_bracers.png);
+}
+.man.thrust .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_leather_armor_shirt_white.png);
+}
+.man.thrust .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_leather_armor_shoulders.png);
+}
+.man.thrust .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_leather_armor_torso.png);
+}
+.man.thrust .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_plate_armor_arms_shoulders.png);
+}
+.man.thrust .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_plate_armor_torso.png);
+}
+.man.thrust .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_robe_shirt_brown.png);
+}
+.man.thrust .weapon-shield-cutout-body {
+  background-image: url(../assets/lpc_entry/png/thrust/WEAPON_shield_cutout_body.png);
+}
+.man.thrust .weapon-shield-cutout-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/thrust/WEAPON_shield_cutout_chain_armor_helmet.png);
+}
+.man.bow .body {
+  background-image: url(../assets/lpc_entry/png/bow/BODY_male.png);
+}
+.man.bow .quiver {
+  background-image: url(../assets/lpc_entry/png/bow/BEHIND_quiver.png);
+}
+.man.bow .belt-leather {
+  background-image: url(../assets/lpc_entry/png/bow/BELT_leather.png);
+}
+.man.bow .belt-rope {
+  background-image: url(../assets/lpc_entry/png/bow/BELT_rope.png);
+}
+.man.bow .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/bow/FEET_plate_armor_shoes.png);
+}
+.man.bow .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/bow/FEET_shoes_brown.png);
+}
+.man.bow .hands-armor {
+  background-image: url(../assets/lpc_entry/png/bow/HANDS_plate_armor_gloves.png);
+}
+.man.bow .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_chain_armor_helmet.png);
+}
+.man.bow .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_chain_armor_hood.png);
+}
+.man.bow .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_hair_blonde.png);
+}
+.man.bow .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_leather_armor_hat.png);
+}
+.man.bow .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_plate_armor_helmet.png);
+}
+.man.bow .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_robe_hood.png);
+}
+.man.bow .legs-green {
+  background-image: url(../assets/lpc_entry/png/bow/LEGS_pants_greenish.png);
+}
+.man.bow .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/bow/LEGS_plate_armor_pants.png);
+}
+.man.bow .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/bow/LEGS_robe_skirt.png);
+}
+.man.bow .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_chain_armor_jacket_purple.png);
+}
+.man.bow .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_chain_armor_torso.png);
+}
+.man.bow .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_leather_armor_bracers.png);
+}
+.man.bow .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_leather_armor_shirt_white.png);
+}
+.man.bow .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_leather_armor_shoulders.png);
+}
+.man.bow .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_leather_armor_torso.png);
+}
+.man.bow .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_plate_armor_arms_shoulders.png);
+}
+.man.bow .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_plate_armor_torso.png);
+}
+.man.bow .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_robe_shirt_brown.png);
+}
+.man.spellcast .body {
+  background-image: url(../assets/lpc_entry/png/spellcast/BODY_male.png);
+}
+.man.spellcast .quiver {
+  background-image: url(../assets/lpc_entry/png/spellcast/BEHIND_quiver.png);
+}
+.man.spellcast .belt-leather {
+  background-image: url(../assets/lpc_entry/png/spellcast/BELT_leather.png);
+}
+.man.spellcast .belt-rope {
+  background-image: url(../assets/lpc_entry/png/spellcast/BELT_rope.png);
+}
+.man.spellcast .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/spellcast/FEET_plate_armor_shoes.png);
+}
+.man.spellcast .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/spellcast/FEET_shoes_brown.png);
+}
+.man.spellcast .hands-armor {
+  background-image: url(../assets/lpc_entry/png/spellcast/HANDS_plate_armor_gloves.png);
+}
+.man.spellcast .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_chain_armor_helmet.png);
+}
+.man.spellcast .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_chain_armor_hood.png);
+}
+.man.spellcast .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_hair_blonde.png);
+}
+.man.spellcast .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_leather_armor_hat.png);
+}
+.man.spellcast .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_plate_armor_helmet.png);
+}
+.man.spellcast .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_robe_hood.png);
+}
+.man.spellcast .legs-green {
+  background-image: url(../assets/lpc_entry/png/spellcast/LEGS_pants_greenish.png);
+}
+.man.spellcast .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/spellcast/LEGS_plate_armor_pants.png);
+}
+.man.spellcast .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/spellcast/LEGS_robe_skirt.png);
+}
+.man.spellcast .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_chain_armor_jacket_purple.png);
+}
+.man.spellcast .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_chain_armor_torso.png);
+}
+.man.spellcast .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_leather_armor_bracers.png);
+}
+.man.spellcast .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_leather_armor_shirt_white.png);
+}
+.man.spellcast .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_leather_armor_shoulders.png);
+}
+.man.spellcast .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_leather_armor_torso.png);
+}
+.man.spellcast .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_plate_armor_arms_shoulders.png);
+}
+.man.spellcast .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_plate_armor_torso.png);
+}
+.man.spellcast .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_robe_shirt_brown.png);
+}
+.man.hurt .body {
+  background-image: url(../assets/lpc_entry/png/hurt/BODY_male.png);
+}
+.man.hurt .quiver {
+  background-image: url(../assets/lpc_entry/png/hurt/BEHIND_quiver.png);
+}
+.man.hurt .belt-leather {
+  background-image: url(../assets/lpc_entry/png/hurt/BELT_leather.png);
+}
+.man.hurt .belt-rope {
+  background-image: url(../assets/lpc_entry/png/hurt/BELT_rope.png);
+}
+.man.hurt .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/FEET_plate_armor_shoes.png);
+}
+.man.hurt .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/hurt/FEET_shoes_brown.png);
+}
+.man.hurt .hands-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/HANDS_plate_armor_gloves.png);
+}
+.man.hurt .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_chain_armor_helmet.png);
+}
+.man.hurt .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_chain_armor_hood.png);
+}
+.man.hurt .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_hair_blonde.png);
+}
+.man.hurt .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_leather_armor_hat.png);
+}
+.man.hurt .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_plate_armor_helmet.png);
+}
+.man.hurt .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_robe_hood.png);
+}
+.man.hurt .legs-green {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_pants_greenish.png);
+}
+.man.hurt .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_plate_armor_pants.png);
+}
+.man.hurt .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_robe_skirt.png);
+}
+.man.hurt .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_chain_armor_jacket_purple.png);
+}
+.man.hurt .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_chain_armor_torso.png);
+}
+.man.hurt .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_bracers.png);
+}
+.man.hurt .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_shirt_white.png);
+}
+.man.hurt .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_shoulders.png);
+}
+.man.hurt .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_torso.png);
+}
+.man.hurt .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_plate_armor_arms_shoulders.png);
+}
+.man.hurt .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_plate_armor_torso.png);
+}
+.man.hurt .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_robe_shirt_brown.png);
+}
+.man.dead .body {
+  background-image: url(../assets/lpc_entry/png/hurt/BODY_male.png);
+}
+.man.dead .body,
+.man.dead .accessory {
+  background-position-x: -320px;
+}
+.man.dead .body.quiver,
+.man.dead .accessory.quiver {
+  background-image: url(../assets/lpc_entry/png/hurt/BEHIND_quiver.png);
+}
+.man.dead .body.belt-leather,
+.man.dead .accessory.belt-leather {
+  background-image: url(../assets/lpc_entry/png/hurt/BELT_leather.png);
+}
+.man.dead .body.belt-rope,
+.man.dead .accessory.belt-rope {
+  background-image: url(../assets/lpc_entry/png/hurt/BELT_rope.png);
+}
+.man.dead .body.shoes-armor,
+.man.dead .accessory.shoes-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/FEET_plate_armor_shoes.png);
+}
+.man.dead .body.shoes-leather,
+.man.dead .accessory.shoes-leather {
+  background-image: url(../assets/lpc_entry/png/hurt/FEET_shoes_brown.png);
+}
+.man.dead .body.hands-armor,
+.man.dead .accessory.hands-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/HANDS_plate_armor_gloves.png);
+}
+.man.dead .body.head-chain-armor-helmet,
+.man.dead .accessory.head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_chain_armor_helmet.png);
+}
+.man.dead .body.head-chain-armor-hood,
+.man.dead .accessory.head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_chain_armor_hood.png);
+}
+.man.dead .body.head-hair-blond,
+.man.dead .accessory.head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_hair_blonde.png);
+}
+.man.dead .body.head-leather-armor-hat,
+.man.dead .accessory.head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_leather_armor_hat.png);
+}
+.man.dead .body.head-plate-armor-helmet,
+.man.dead .accessory.head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_plate_armor_helmet.png);
+}
+.man.dead .body.head-robe-hood,
+.man.dead .accessory.head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_robe_hood.png);
+}
+.man.dead .body.legs-green,
+.man.dead .accessory.legs-green {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_pants_greenish.png);
+}
+.man.dead .body.legs-plate-armor,
+.man.dead .accessory.legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_plate_armor_pants.png);
+}
+.man.dead .body.legs-robe-skirt,
+.man.dead .accessory.legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_robe_skirt.png);
+}
+.man.dead .body.torso-chain-armor-jacket-purple,
+.man.dead .accessory.torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_chain_armor_jacket_purple.png);
+}
+.man.dead .body.torso-chain-armor,
+.man.dead .accessory.torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_chain_armor_torso.png);
+}
+.man.dead .body.torso-leather-armor-bracers,
+.man.dead .accessory.torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_bracers.png);
+}
+.man.dead .body.torso-leather-armor-shirt-white,
+.man.dead .accessory.torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_shirt_white.png);
+}
+.man.dead .body.torso-leather-armor-shoulders,
+.man.dead .accessory.torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_shoulders.png);
+}
+.man.dead .body.torso-leather-armor-torso,
+.man.dead .accessory.torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_torso.png);
+}
+.man.dead .body.torso-plate-armor-arms-shoulders,
+.man.dead .accessory.torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_plate_armor_arms_shoulders.png);
+}
+.man.dead .body.torso-plate-armor-torso,
+.man.dead .accessory.torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_plate_armor_torso.png);
+}
+.man.dead .body.torso-robe-shirt-brown,
+.man.dead .accessory.torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_robe_shirt_brown.png);
+}
+.skeleton {
+  /* walk */
+  /* weapons */
+}
+.skeleton.up .body,
+.skeleton.up .accessory {
+  background-position: 0 0;
+}
+.skeleton.up .body.quiver,
+.skeleton.up .accessory.quiver {
+  z-index: 2;
+}
+.skeleton.up .body.weapon-rapier,
+.skeleton.up .accessory.weapon-rapier,
+.skeleton.up .body.weapon-long-spear,
+.skeleton.up .accessory.weapon-long-spear,
+.skeleton.up .body.weapon-longsword,
+.skeleton.up .accessory.weapon-longsword,
+.skeleton.up .body.weapon-spear,
+.skeleton.up .accessory.weapon-spear,
+.skeleton.up .body.weapon-staff,
+.skeleton.up .accessory.weapon-staff {
+  z-index: 0;
+}
+.skeleton.left .body,
+.skeleton.left .accessory {
+  background-position: 0px -64px;
+}
+.skeleton.left .body.quiver,
+.skeleton.left .accessory.quiver {
+  z-index: 0;
+}
+.skeleton.left .body.weapon-rapier,
+.skeleton.left .accessory.weapon-rapier,
+.skeleton.left .body.weapon-long-spear,
+.skeleton.left .accessory.weapon-long-spear,
+.skeleton.left .body.weapon-longsword,
+.skeleton.left .accessory.weapon-longsword,
+.skeleton.left .body.weapon-spear,
+.skeleton.left .accessory.weapon-spear,
+.skeleton.left .body.weapon-staff,
+.skeleton.left .accessory.weapon-staff {
+  z-index: 2;
+}
+.skeleton.down .body,
+.skeleton.down .accessory {
+  background-position: 0px -128px;
+}
+.skeleton.down .body.quiver,
+.skeleton.down .accessory.quiver {
+  z-index: 0;
+}
+.skeleton.down .body.weapon-rapier,
+.skeleton.down .accessory.weapon-rapier,
+.skeleton.down .body.weapon-long-spear,
+.skeleton.down .accessory.weapon-long-spear,
+.skeleton.down .body.weapon-longsword,
+.skeleton.down .accessory.weapon-longsword,
+.skeleton.down .body.weapon-spear,
+.skeleton.down .accessory.weapon-spear,
+.skeleton.down .body.weapon-staff,
+.skeleton.down .accessory.weapon-staff {
+  z-index: 2;
+}
+.skeleton.right .body,
+.skeleton.right .accessory {
+  background-position: 0px -192px;
+}
+.skeleton.right .body.quiver,
+.skeleton.right .accessory.quiver {
+  z-index: 0;
+}
+.skeleton.right .body.weapon-rapier,
+.skeleton.right .accessory.weapon-rapier,
+.skeleton.right .body.weapon-long-spear,
+.skeleton.right .accessory.weapon-long-spear,
+.skeleton.right .body.weapon-longsword,
+.skeleton.right .accessory.weapon-longsword,
+.skeleton.right .body.weapon-spear,
+.skeleton.right .accessory.weapon-spear,
+.skeleton.right .body.weapon-staff,
+.skeleton.right .accessory.weapon-staff {
+  z-index: 2;
+}
+.skeleton .accessory.weapon-rapier,
+.skeleton .accessory.weapon-longsword,
+.skeleton .accessory.weapon-long-spear {
+  top: -64px;
+  left: -64px;
+  width: 192px;
+  height: 192px;
+}
+.skeleton.up .accessory.weapon-rapier,
+.skeleton.up .accessory.weapon-longsword,
+.skeleton.up .accessory.weapon-long-spear {
+  background-position-y: 0px;
+}
+.skeleton.left .accessory.weapon-rapier,
+.skeleton.left .accessory.weapon-longsword,
+.skeleton.left .accessory.weapon-long-spear {
+  background-position-y: -192px;
+}
+.skeleton.down .accessory.weapon-rapier,
+.skeleton.down .accessory.weapon-longsword,
+.skeleton.down .accessory.weapon-long-spear {
+  background-position-y: -384px;
+}
+.skeleton.right .accessory.weapon-rapier,
+.skeleton.right .accessory.weapon-longsword,
+.skeleton.right .accessory.weapon-long-spear {
+  background-position-y: -576px;
+}
+.skeleton.walk .body,
+.skeleton.walk .accessory {
+  animation: walk 0.5s steps(8) infinite;
+}
+.skeleton.walk .body.weapon-rapier,
+.skeleton.walk .accessory.weapon-rapier,
+.skeleton.walk .body.weapon-longsword,
+.skeleton.walk .accessory.weapon-longsword,
+.skeleton.walk .body.weapon-long-spear,
+.skeleton.walk .accessory.weapon-long-spear {
+  width: 192px;
+  height: 192px;
+}
+.skeleton.walk .body.weapon-rapier,
+.skeleton.walk .accessory.weapon-rapier,
+.skeleton.walk .body.weapon-longsword,
+.skeleton.walk .accessory.weapon-longsword,
+.skeleton.walk .body.weapon-long-spear,
+.skeleton.walk .accessory.weapon-long-spear,
+.skeleton.walk .body.weapon-spear,
+.skeleton.walk .accessory.weapon-spear,
+.skeleton.walk .body.weapon-staff,
+.skeleton.walk .accessory.weapon-staff,
+.skeleton.walk .body.weapon-bow,
+.skeleton.walk .accessory.weapon-bow {
+  animation: none;
+}
+@keyframes skeleton-walk {
+  to {
+    background-position-x: -512px;
+  }
+}
+@keyframes skeleton-slash {
+  to {
+    background-position-x: -384px;
+  }
+}
+@keyframes skeleton-slash-weapon {
+  to {
+    background-position-x: -1152px;
+  }
+}
+@keyframes skeleton-thrust {
+  to {
+    background-position-x: -448px;
+  }
+}
+@keyframes skeleton-thrust-weapon {
+  to {
+    background-position-x: -1344px;
+  }
+}
+@keyframes skeleton-bow {
+  to {
+    background-position-x: -768px;
+  }
+}
+@keyframes skeleton-spellcast {
+  to {
+    background-position-x: -384px;
+  }
+}
+@keyframes skeleton-hurt {
+  to {
+    background-position-x: -384px;
+  }
+}
+.skeleton.action.slash .body,
+.skeleton.action.slash .accessory {
+  animation: skeleton-slash 0.4s steps(6) forwards;
+}
+.skeleton.action.slash .body.weapon-rapier,
+.skeleton.action.slash .accessory.weapon-rapier,
+.skeleton.action.slash .body.weapon-longsword,
+.skeleton.action.slash .accessory.weapon-longsword {
+  /* 192x192 */
+  animation: skeleton-slash-weapon 0.4s steps(6) forwards;
+}
+.skeleton.action.thrust .body,
+.skeleton.action.thrust .accessory {
+  animation: skeleton-thrust 0.5s steps(7) forwards;
+}
+.skeleton.action.thrust .body.weapon-long-spear,
+.skeleton.action.thrust .accessory.weapon-long-spear {
+  /* 192x192 */
+  animation: skeleton-thrust-weapon 0.5s steps(7) forwards;
+}
+.skeleton.action.bow .body,
+.skeleton.action.bow .accessory {
+  animation: skeleton-bow 1s steps(12) forwards;
+}
+.skeleton.action.spellcast .body,
+.skeleton.action.spellcast .accessory {
+  animation: skeleton-spellcast 1s steps(6) forwards;
+}
+.skeleton.action.hurt .body,
+.skeleton.action.hurt .accessory {
+  animation: skeleton-hurt 1s steps(6) forwards;
+}
+.skeleton .body {
+  background-image: url(../assets/lpc_entry/png/walkcycle/BODY_skeleton.png);
+}
+.skeleton .quiver {
+  background-image: url(../assets/lpc_entry/png/walkcycle/BEHIND_quiver.png);
+}
+.skeleton .belt-leather {
+  background-image: url(../assets/lpc_entry/png/walkcycle/BELT_leather.png);
+}
+.skeleton .belt-rope {
+  background-image: url(../assets/lpc_entry/png/walkcycle/BELT_rope.png);
+}
+.skeleton .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/walkcycle/FEET_plate_armor_shoes.png);
+}
+.skeleton .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/walkcycle/FEET_shoes_brown.png);
+}
+.skeleton .hands-armor {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HANDS_plate_armor_gloves.png);
+}
+.skeleton .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_chain_armor_helmet.png);
+}
+.skeleton .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_chain_armor_hood.png);
+}
+.skeleton .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_hair_blonde.png);
+}
+.skeleton .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_leather_armor_hat.png);
+}
+.skeleton .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_plate_armor_helmet.png);
+}
+.skeleton .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/walkcycle/HEAD_robe_hood.png);
+}
+.skeleton .legs-green {
+  background-image: url(../assets/lpc_entry/png/walkcycle/LEGS_pants_greenish.png);
+}
+.skeleton .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/walkcycle/LEGS_plate_armor_pants.png);
+}
+.skeleton .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/walkcycle/LEGS_robe_skirt.png);
+}
+.skeleton .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_chain_armor_jacket_purple.png);
+}
+.skeleton .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_chain_armor_torso.png);
+}
+.skeleton .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_leather_armor_bracers.png);
+}
+.skeleton .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_leather_armor_shirt_white.png);
+}
+.skeleton .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_leather_armor_shoulders.png);
+}
+.skeleton .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_leather_armor_torso.png);
+}
+.skeleton .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_plate_armor_arms_shoulders.png);
+}
+.skeleton .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_plate_armor_torso.png);
+}
+.skeleton .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/walkcycle/TORSO_robe_shirt_brown.png);
+}
+.skeleton .weapon-shield-cutout-body {
+  background-image: url(../assets/lpc_entry/png/walkcycle/WEAPON_shield_cutout_body.png);
+}
+.skeleton .weapon-shield-cutout-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/walkcycle/WEAPON_shield_cutout_chain_armor_helmet.png);
+}
+.skeleton .weapon-rapier {
+  background-image: url(../assets/lpc_entry/png/192x192/slash/WEAPON_rapier.png);
+}
+.skeleton .weapon-longsword {
+  background-image: url(../assets/lpc_entry/png/192x192/slash/WEAPON_longsword.png);
+}
+.skeleton .weapon-long-spear {
+  background-image: url(../assets/lpc_entry/png/192x192/thrust/WEAPON_long_spear.png);
+}
+.skeleton .weapon-spear {
+  background-image: url(../assets/lpc_entry/png/thrust/WEAPON_spear.png);
+}
+.skeleton .weapon-staff {
+  background-image: url(../assets/lpc_entry/png/thrust/WEAPON_staff.png);
+}
+.skeleton .weapon-bow {
+  background-image: url(../assets/lpc_entry/png/bow/WEAPON_bow.png);
+}
+.skeleton.slash .body {
+  background-image: url(../assets/lpc_entry/png/slash/BODY_skeleton.png);
+}
+.skeleton.slash .quiver {
+  background-image: url(../assets/lpc_entry/png/slash/BEHIND_quiver.png);
+}
+.skeleton.slash .belt-leather {
+  background-image: url(../assets/lpc_entry/png/slash/BELT_leather.png);
+}
+.skeleton.slash .belt-rope {
+  background-image: url(../assets/lpc_entry/png/slash/BELT_rope.png);
+}
+.skeleton.slash .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/slash/FEET_plate_armor_shoes.png);
+}
+.skeleton.slash .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/slash/FEET_shoes_brown.png);
+}
+.skeleton.slash .hands-armor {
+  background-image: url(../assets/lpc_entry/png/slash/HANDS_plate_armor_gloves.png);
+}
+.skeleton.slash .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_chain_armor_helmet.png);
+}
+.skeleton.slash .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_chain_armor_hood.png);
+}
+.skeleton.slash .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_hair_blonde.png);
+}
+.skeleton.slash .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_leather_armor_hat.png);
+}
+.skeleton.slash .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_plate_armor_helmet.png);
+}
+.skeleton.slash .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/slash/HEAD_robe_hood.png);
+}
+.skeleton.slash .legs-green {
+  background-image: url(../assets/lpc_entry/png/slash/LEGS_pants_greenish.png);
+}
+.skeleton.slash .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/slash/LEGS_plate_armor_pants.png);
+}
+.skeleton.slash .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/slash/LEGS_robe_skirt.png);
+}
+.skeleton.slash .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_chain_armor_jacket_purple.png);
+}
+.skeleton.slash .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_chain_armor_torso.png);
+}
+.skeleton.slash .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_leather_armor_bracers.png);
+}
+.skeleton.slash .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_leather_armor_shirt_white.png);
+}
+.skeleton.slash .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_leather_armor_shoulders.png);
+}
+.skeleton.slash .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_leather_armor_torso.png);
+}
+.skeleton.slash .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_plate_armor_arms_shoulders.png);
+}
+.skeleton.slash .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_plate_armor_torso.png);
+}
+.skeleton.slash .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/slash/TORSO_robe_shirt_brown.png);
+}
+.skeleton.slash .weapon-shield-cutout-body {
+  background-image: url(../assets/lpc_entry/png/slash/WEAPON_shield_cutout_body.png);
+}
+.skeleton.slash .weapon-shield-cutout-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/slash/WEAPON_shield_cutout_chain_armor_helmet.png);
+}
+.skeleton.thrust .body {
+  background-image: url(../assets/lpc_entry/png/thrust/BODY_skeleton.png);
+}
+.skeleton.thrust .quiver {
+  background-image: url(../assets/lpc_entry/png/thrust/BEHIND_quiver.png);
+}
+.skeleton.thrust .belt-leather {
+  background-image: url(../assets/lpc_entry/png/thrust/BELT_leather.png);
+}
+.skeleton.thrust .belt-rope {
+  background-image: url(../assets/lpc_entry/png/thrust/BELT_rope.png);
+}
+.skeleton.thrust .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/thrust/FEET_plate_armor_shoes.png);
+}
+.skeleton.thrust .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/thrust/FEET_shoes_brown.png);
+}
+.skeleton.thrust .hands-armor {
+  background-image: url(../assets/lpc_entry/png/thrust/HANDS_plate_armor_gloves.png);
+}
+.skeleton.thrust .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_chain_armor_helmet.png);
+}
+.skeleton.thrust .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_chain_armor_hood.png);
+}
+.skeleton.thrust .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_hair_blonde.png);
+}
+.skeleton.thrust .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_leather_armor_hat.png);
+}
+.skeleton.thrust .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_plate_armor_helmet.png);
+}
+.skeleton.thrust .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/thrust/HEAD_robe_hood.png);
+}
+.skeleton.thrust .legs-green {
+  background-image: url(../assets/lpc_entry/png/thrust/LEGS_pants_greenish.png);
+}
+.skeleton.thrust .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/thrust/LEGS_plate_armor_pants.png);
+}
+.skeleton.thrust .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/thrust/LEGS_robe_skirt.png);
+}
+.skeleton.thrust .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_chain_armor_jacket_purple.png);
+}
+.skeleton.thrust .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_chain_armor_torso.png);
+}
+.skeleton.thrust .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_leather_armor_bracers.png);
+}
+.skeleton.thrust .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_leather_armor_shirt_white.png);
+}
+.skeleton.thrust .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_leather_armor_shoulders.png);
+}
+.skeleton.thrust .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_leather_armor_torso.png);
+}
+.skeleton.thrust .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_plate_armor_arms_shoulders.png);
+}
+.skeleton.thrust .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_plate_armor_torso.png);
+}
+.skeleton.thrust .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/thrust/TORSO_robe_shirt_brown.png);
+}
+.skeleton.thrust .weapon-shield-cutout-body {
+  background-image: url(../assets/lpc_entry/png/thrust/WEAPON_shield_cutout_body.png);
+}
+.skeleton.thrust .weapon-shield-cutout-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/thrust/WEAPON_shield_cutout_chain_armor_helmet.png);
+}
+.skeleton.bow .body {
+  background-image: url(../assets/lpc_entry/png/bow/BODY_skeleton.png);
+}
+.skeleton.bow .quiver {
+  background-image: url(../assets/lpc_entry/png/bow/BEHIND_quiver.png);
+}
+.skeleton.bow .belt-leather {
+  background-image: url(../assets/lpc_entry/png/bow/BELT_leather.png);
+}
+.skeleton.bow .belt-rope {
+  background-image: url(../assets/lpc_entry/png/bow/BELT_rope.png);
+}
+.skeleton.bow .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/bow/FEET_plate_armor_shoes.png);
+}
+.skeleton.bow .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/bow/FEET_shoes_brown.png);
+}
+.skeleton.bow .hands-armor {
+  background-image: url(../assets/lpc_entry/png/bow/HANDS_plate_armor_gloves.png);
+}
+.skeleton.bow .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_chain_armor_helmet.png);
+}
+.skeleton.bow .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_chain_armor_hood.png);
+}
+.skeleton.bow .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_hair_blonde.png);
+}
+.skeleton.bow .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_leather_armor_hat.png);
+}
+.skeleton.bow .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_plate_armor_helmet.png);
+}
+.skeleton.bow .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/bow/HEAD_robe_hood.png);
+}
+.skeleton.bow .legs-green {
+  background-image: url(../assets/lpc_entry/png/bow/LEGS_pants_greenish.png);
+}
+.skeleton.bow .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/bow/LEGS_plate_armor_pants.png);
+}
+.skeleton.bow .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/bow/LEGS_robe_skirt.png);
+}
+.skeleton.bow .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_chain_armor_jacket_purple.png);
+}
+.skeleton.bow .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_chain_armor_torso.png);
+}
+.skeleton.bow .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_leather_armor_bracers.png);
+}
+.skeleton.bow .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_leather_armor_shirt_white.png);
+}
+.skeleton.bow .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_leather_armor_shoulders.png);
+}
+.skeleton.bow .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_leather_armor_torso.png);
+}
+.skeleton.bow .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_plate_armor_arms_shoulders.png);
+}
+.skeleton.bow .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_plate_armor_torso.png);
+}
+.skeleton.bow .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/bow/TORSO_robe_shirt_brown.png);
+}
+.skeleton.spellcast .body {
+  background-image: url(../assets/lpc_entry/png/spellcast/BODY_skeleton.png);
+}
+.skeleton.spellcast .quiver {
+  background-image: url(../assets/lpc_entry/png/spellcast/BEHIND_quiver.png);
+}
+.skeleton.spellcast .belt-leather {
+  background-image: url(../assets/lpc_entry/png/spellcast/BELT_leather.png);
+}
+.skeleton.spellcast .belt-rope {
+  background-image: url(../assets/lpc_entry/png/spellcast/BELT_rope.png);
+}
+.skeleton.spellcast .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/spellcast/FEET_plate_armor_shoes.png);
+}
+.skeleton.spellcast .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/spellcast/FEET_shoes_brown.png);
+}
+.skeleton.spellcast .hands-armor {
+  background-image: url(../assets/lpc_entry/png/spellcast/HANDS_plate_armor_gloves.png);
+}
+.skeleton.spellcast .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_chain_armor_helmet.png);
+}
+.skeleton.spellcast .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_chain_armor_hood.png);
+}
+.skeleton.spellcast .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_hair_blonde.png);
+}
+.skeleton.spellcast .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_leather_armor_hat.png);
+}
+.skeleton.spellcast .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_plate_armor_helmet.png);
+}
+.skeleton.spellcast .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/spellcast/HEAD_robe_hood.png);
+}
+.skeleton.spellcast .legs-green {
+  background-image: url(../assets/lpc_entry/png/spellcast/LEGS_pants_greenish.png);
+}
+.skeleton.spellcast .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/spellcast/LEGS_plate_armor_pants.png);
+}
+.skeleton.spellcast .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/spellcast/LEGS_robe_skirt.png);
+}
+.skeleton.spellcast .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_chain_armor_jacket_purple.png);
+}
+.skeleton.spellcast .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_chain_armor_torso.png);
+}
+.skeleton.spellcast .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_leather_armor_bracers.png);
+}
+.skeleton.spellcast .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_leather_armor_shirt_white.png);
+}
+.skeleton.spellcast .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_leather_armor_shoulders.png);
+}
+.skeleton.spellcast .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_leather_armor_torso.png);
+}
+.skeleton.spellcast .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_plate_armor_arms_shoulders.png);
+}
+.skeleton.spellcast .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_plate_armor_torso.png);
+}
+.skeleton.spellcast .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/spellcast/TORSO_robe_shirt_brown.png);
+}
+.skeleton.hurt .body {
+  background-image: url(../assets/lpc_entry/png/hurt/BODY_skeleton.png);
+}
+.skeleton.hurt .quiver {
+  background-image: url(../assets/lpc_entry/png/hurt/BEHIND_quiver.png);
+}
+.skeleton.hurt .belt-leather {
+  background-image: url(../assets/lpc_entry/png/hurt/BELT_leather.png);
+}
+.skeleton.hurt .belt-rope {
+  background-image: url(../assets/lpc_entry/png/hurt/BELT_rope.png);
+}
+.skeleton.hurt .shoes-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/FEET_plate_armor_shoes.png);
+}
+.skeleton.hurt .shoes-leather {
+  background-image: url(../assets/lpc_entry/png/hurt/FEET_shoes_brown.png);
+}
+.skeleton.hurt .hands-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/HANDS_plate_armor_gloves.png);
+}
+.skeleton.hurt .head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_chain_armor_helmet.png);
+}
+.skeleton.hurt .head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_chain_armor_hood.png);
+}
+.skeleton.hurt .head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_hair_blonde.png);
+}
+.skeleton.hurt .head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_leather_armor_hat.png);
+}
+.skeleton.hurt .head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_plate_armor_helmet.png);
+}
+.skeleton.hurt .head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_robe_hood.png);
+}
+.skeleton.hurt .legs-green {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_pants_greenish.png);
+}
+.skeleton.hurt .legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_plate_armor_pants.png);
+}
+.skeleton.hurt .legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_robe_skirt.png);
+}
+.skeleton.hurt .torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_chain_armor_jacket_purple.png);
+}
+.skeleton.hurt .torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_chain_armor_torso.png);
+}
+.skeleton.hurt .torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_bracers.png);
+}
+.skeleton.hurt .torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_shirt_white.png);
+}
+.skeleton.hurt .torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_shoulders.png);
+}
+.skeleton.hurt .torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_torso.png);
+}
+.skeleton.hurt .torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_plate_armor_arms_shoulders.png);
+}
+.skeleton.hurt .torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_plate_armor_torso.png);
+}
+.skeleton.hurt .torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_robe_shirt_brown.png);
+}
+.skeleton.dead .body {
+  background-image: url(../assets/lpc_entry/png/hurt/BODY_skeleton.png);
+}
+.skeleton.dead .body,
+.skeleton.dead .accessory {
+  background-position-x: -320px;
+}
+.skeleton.dead .body.quiver,
+.skeleton.dead .accessory.quiver {
+  background-image: url(../assets/lpc_entry/png/hurt/BEHIND_quiver.png);
+}
+.skeleton.dead .body.belt-leather,
+.skeleton.dead .accessory.belt-leather {
+  background-image: url(../assets/lpc_entry/png/hurt/BELT_leather.png);
+}
+.skeleton.dead .body.belt-rope,
+.skeleton.dead .accessory.belt-rope {
+  background-image: url(../assets/lpc_entry/png/hurt/BELT_rope.png);
+}
+.skeleton.dead .body.shoes-armor,
+.skeleton.dead .accessory.shoes-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/FEET_plate_armor_shoes.png);
+}
+.skeleton.dead .body.shoes-leather,
+.skeleton.dead .accessory.shoes-leather {
+  background-image: url(../assets/lpc_entry/png/hurt/FEET_shoes_brown.png);
+}
+.skeleton.dead .body.hands-armor,
+.skeleton.dead .accessory.hands-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/HANDS_plate_armor_gloves.png);
+}
+.skeleton.dead .body.head-chain-armor-helmet,
+.skeleton.dead .accessory.head-chain-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_chain_armor_helmet.png);
+}
+.skeleton.dead .body.head-chain-armor-hood,
+.skeleton.dead .accessory.head-chain-armor-hood {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_chain_armor_hood.png);
+}
+.skeleton.dead .body.head-hair-blond,
+.skeleton.dead .accessory.head-hair-blond {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_hair_blonde.png);
+}
+.skeleton.dead .body.head-leather-armor-hat,
+.skeleton.dead .accessory.head-leather-armor-hat {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_leather_armor_hat.png);
+}
+.skeleton.dead .body.head-plate-armor-helmet,
+.skeleton.dead .accessory.head-plate-armor-helmet {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_plate_armor_helmet.png);
+}
+.skeleton.dead .body.head-robe-hood,
+.skeleton.dead .accessory.head-robe-hood {
+  background-image: url(../assets/lpc_entry/png/hurt/HEAD_robe_hood.png);
+}
+.skeleton.dead .body.legs-green,
+.skeleton.dead .accessory.legs-green {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_pants_greenish.png);
+}
+.skeleton.dead .body.legs-plate-armor,
+.skeleton.dead .accessory.legs-plate-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_plate_armor_pants.png);
+}
+.skeleton.dead .body.legs-robe-skirt,
+.skeleton.dead .accessory.legs-robe-skirt {
+  background-image: url(../assets/lpc_entry/png/hurt/LEGS_robe_skirt.png);
+}
+.skeleton.dead .body.torso-chain-armor-jacket-purple,
+.skeleton.dead .accessory.torso-chain-armor-jacket-purple {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_chain_armor_jacket_purple.png);
+}
+.skeleton.dead .body.torso-chain-armor,
+.skeleton.dead .accessory.torso-chain-armor {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_chain_armor_torso.png);
+}
+.skeleton.dead .body.torso-leather-armor-bracers,
+.skeleton.dead .accessory.torso-leather-armor-bracers {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_bracers.png);
+}
+.skeleton.dead .body.torso-leather-armor-shirt-white,
+.skeleton.dead .accessory.torso-leather-armor-shirt-white {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_shirt_white.png);
+}
+.skeleton.dead .body.torso-leather-armor-shoulders,
+.skeleton.dead .accessory.torso-leather-armor-shoulders {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_shoulders.png);
+}
+.skeleton.dead .body.torso-leather-armor-torso,
+.skeleton.dead .accessory.torso-leather-armor-torso {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_leather_armor_torso.png);
+}
+.skeleton.dead .body.torso-plate-armor-arms-shoulders,
+.skeleton.dead .accessory.torso-plate-armor-arms-shoulders {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_plate_armor_arms_shoulders.png);
+}
+.skeleton.dead .body.torso-plate-armor-torso,
+.skeleton.dead .accessory.torso-plate-armor-torso {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_plate_armor_torso.png);
+}
+.skeleton.dead .body.torso-robe-shirt-brown,
+.skeleton.dead .accessory.torso-robe-shirt-brown {
+  background-image: url(../assets/lpc_entry/png/hurt/TORSO_robe_shirt_brown.png);
+}
+.goblin {
+  /* animations */
+}
+.goblin.down .body,
+.goblin.down .accessory {
+  background-position: 0 0;
+}
+.goblin.right .body,
+.goblin.right .accessory {
+  background-position: 0px -64px;
+}
+.goblin.up .body,
+.goblin.up .accessory {
+  background-position: 0 -128px;
+}
+.goblin.left .body,
+.goblin.left .accessory {
+  background-position: 0px -192px;
+}
+.goblin.walk .body,
+.goblin.walk .accessory {
+  animation: goblin-walk 0.5s steps(7) infinite;
+}
+@keyframes goblin-walk {
+  to {
+    background-position-x: -448px;
+  }
+}
+@keyframes goblin-slash {
+  0% {
+    background-position-x: -520px;
+  }
+  100% {
+    background-position-x: -712px;
+  }
+}
+.goblin.action.jab .body,
+.goblin.action.jab .accessory {
+  animation: goblin-slash 0.5s steps(3) forwards;
+}
+.goblin .body {
+  background-image: url(../assets/goblin/goblin.png);
+}
+.goblin .weapon-knife {
+  background-image: url(../assets/goblin/knife.png);
+}

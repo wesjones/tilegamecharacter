@@ -1,0 +1,35 @@
+.goblin {
+  &.down .body, &.down .accessory {
+    background-position: -0 -0;
+  }
+  &.right .body, &.right .accessory {
+    background-position: -0px -64px;
+  }
+  &.up .body, &.up .accessory {
+    background-position: -0 -128px;
+  }
+  &.left .body, &.left .accessory {
+    background-position: -0px -192px;
+  }
+  /* animations */
+  &.walk .body, &.walk .accessory {
+    animation: goblin-walk 0.5s steps(7) infinite;
+  }
+
+  @keyframes goblin-walk {
+    to { background-position-x:-448px;}
+  }
+  @keyframes goblin-slash {
+    0% { background-position-x: -8*@tile-width - 8 + 0px; }
+    100% { background-position-x:-11*@tile-width - 8 + 0px; }
+  }
+
+  &.action {
+    &.jab .body, &.jab .accessory {
+      animation: goblin-slash 0.5s steps(3) forwards;
+    }
+  }
+
+  .body {background-image: url(../assets/goblin/goblin.png);}
+  .weapon-knife {background-image: url(../assets/goblin/knife.png);}
+}
