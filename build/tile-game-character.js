@@ -1,5 +1,5 @@
 (function(exports, global) {
-    global["rpgc"] = exports;
+    global["tgc"] = exports;
     var define, internal, finalize = function() {};
     (function() {
         var get, defined, pending, definitions, initDefinition, $cachelyToken = "~", $depsRequiredByDefinitionToken = ".";
@@ -460,7 +460,7 @@
     });
     //! #################  YOUR CODE ENDS HERE  #################### //
     finalize();
-    return global["rpgc"];
-})(this["rpgc"] || {}, function() {
+    return global["tgc"];
+})(this["tgc"] || {}, function() {
     return this;
 }());

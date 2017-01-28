@@ -10,9 +10,9 @@ module.exports = function (grunt) {
     var configs = {
         compile: {
             game: {
-                wrap: 'rpgc', // this is your global namespace
-                name: "rpgc",
-                filename: 'rpg-character',
+                wrap: 'tgc', // this is your global namespace
+                name: "tgc",
+                filename: 'tile-game-character',
                 build: 'build',
                 scripts: {
                     embedRequire: true,
@@ -23,7 +23,7 @@ module.exports = function (grunt) {
                     import: ['character'], // what files should we import and compile
                     ignore: [],
                     report: 'verbose',
-                    log: 'logs/rpg-character.log'
+                    log: 'logs/tile-game-character.log'
                 }
             }
         },
@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                     strictImports: true
                 },
                 files: {
-                    'build/rpg-character.css': 'src/styles.less'
+                    'build/tile-game-character.css': 'src/styles.less'
                 }
             }
         }
