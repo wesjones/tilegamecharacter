@@ -25,6 +25,7 @@
     var skeleton = [];
     var man = [];
     var characters = [];
+    var initialRender = true;
     var accessories = [
         'quiver',
 
@@ -219,10 +220,13 @@
 
     setInterval(function() {
         characters.forEach(function(char) {
-            char.el.style.top = char.y * tileSize + "px";
-            char.el.style.left = char.x * tileSize + "px";
+            if (initialRender) {
+                char.el.style.top = char.y * tileSize + "px";
+                char.el.style.left = char.x * tileSize + "px";
+            }
             char.render();
         });
+        initialRender = false;
     }, 20);
 
 </script>

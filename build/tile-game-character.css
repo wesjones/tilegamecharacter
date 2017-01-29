@@ -158,7 +158,7 @@
 .man.walk .accessory.weapon-bow {
   animation: none;
 }
-@keyframes walk {
+@keyframes man-walk {
   to {
     background-position-x: -512px;
   }
@@ -820,6 +820,8 @@
   background-image: url(../assets/lpc_entry/png/hurt/TORSO_robe_shirt_brown.png);
 }
 .skeleton {
+  /* 192x192 images */
+  /* animations */
   /* walk */
   /* weapons */
 }
