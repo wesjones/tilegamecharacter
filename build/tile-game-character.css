@@ -935,7 +935,7 @@
 }
 .skeleton.walk .body,
 .skeleton.walk .accessory {
-  animation: walk 0.5s steps(8) infinite;
+  animation: skeleton-walk 0.5s steps(8) infinite;
 }
 .skeleton.walk .body.weapon-rapier,
 .skeleton.walk .accessory.weapon-rapier,
