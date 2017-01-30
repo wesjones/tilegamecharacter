@@ -20,6 +20,7 @@ define('character', ['dispatcher', 'whichAnimationEvent'], function (dispatcher,
         var body;
         var downKeys = [];
         var actionKeys = {};
+        var beforeAction = {};
         var afterAction = {};
         var activeAction;
         var keyMap = {
@@ -156,10 +157,13 @@ define('character', ['dispatcher', 'whichAnimationEvent'], function (dispatcher,
             return self;
         };
 
-        self.addAction = function(name, keyCode, endClass) {
+        self.addAction = function(name, keyCode, beforeActionFn, afterActionFn) {
             actionKeys[keyCode] = name;
-            if (endClass) {
-                afterAction[name] = endClass;
+            if (beforeActionFn) {
+                beforeAction[name] = beforeActionFn;
+            }
+            if (afterActionFn) {
+                afterAction[name] = afterActionFn;
             }
             return self;
         };
@@ -182,7 +186,7 @@ define('character', ['dispatcher', 'whichAnimationEvent'], function (dispatcher,
                 activeAction.end = fn;// empty out function so it cannot cause a recursive loop if called.
                 self.el.classList.remove("action");
                 self.el.classList.remove(name);
-                self.dispatch(events.ACTION_END, activeAction);
+                self.dispatch(events.ACTION_END, self, activeAction);
                 activeAction = null;
                 if (afterAction[name]) {
                     self.el.classList.add(afterAction[name]);
@@ -193,7 +197,7 @@ define('character', ['dispatcher', 'whichAnimationEvent'], function (dispatcher,
             // intv = setTimeout(activeAction.end, 400);
             self.el.classList.add("action");
             self.el.classList.add(name);
-            self.dispatch(events.ACTION_START, activeAction);
+            self.dispatch(events.ACTION_START, self, activeAction);
             return self;
         };
 

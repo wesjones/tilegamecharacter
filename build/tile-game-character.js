@@ -77,6 +77,7 @@
             var body;
             var downKeys = [];
             var actionKeys = {};
+            var beforeAction = {};
             var afterAction = {};
             var activeAction;
             var keyMap = {
@@ -199,10 +200,13 @@
                 }
                 return self;
             };
-            self.addAction = function(name, keyCode, endClass) {
+            self.addAction = function(name, keyCode, beforeActionFn, afterActionFn) {
                 actionKeys[keyCode] = name;
-                if (endClass) {
-                    afterAction[name] = endClass;
+                if (beforeActionFn) {
+                    beforeAction[name] = beforeActionFn;
+                }
+                if (afterActionFn) {
+                    afterAction[name] = afterActionFn;
                 }
                 return self;
             };
@@ -225,7 +229,7 @@
                         activeAction.end = fn;
                         self.el.classList.remove("action");
                         self.el.classList.remove(name);
-                        self.dispatch(events.ACTION_END, activeAction);
+                        self.dispatch(events.ACTION_END, self, activeAction);
                         activeAction = null;
                         if (afterAction[name]) {
                             self.el.classList.add(afterAction[name]);
@@ -235,7 +239,7 @@
                 body.addEventListener(aniEvent, activeAction.end);
                 self.el.classList.add("action");
                 self.el.classList.add(name);
-                self.dispatch(events.ACTION_START, activeAction);
+                self.dispatch(events.ACTION_START, self, activeAction);
                 return self;
             };
             self.addAccessory = function(name) {

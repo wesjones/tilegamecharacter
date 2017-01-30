@@ -329,6 +329,9 @@
 .man .weapon-bow {
   background-image: url(../assets/lpc_entry/png/bow/WEAPON_bow.png);
 }
+.man .weapon-arrow {
+  background-image: url(../assets/lpc_entry/png/bow/WEAPON_arrow.png);
+}
 .man.slash .body {
   background-image: url(../assets/lpc_entry/png/slash/BODY_male.png);
 }
@@ -565,6 +568,9 @@
 }
 .man.bow .torso-robe-shirt-brown {
   background-image: url(../assets/lpc_entry/png/bow/TORSO_robe_shirt_brown.png);
+}
+.man.bow .weapon-arrow {
+  background-image: url(../assets/lpc_entry/png/bow/WEAPON_arrow.png);
 }
 .man.spellcast .body {
   background-image: url(../assets/lpc_entry/png/spellcast/BODY_male.png);
@@ -1131,6 +1137,9 @@
 .skeleton .weapon-bow {
   background-image: url(../assets/lpc_entry/png/bow/WEAPON_bow.png);
 }
+.skeleton .weapon-arrow {
+  background-image: url(../assets/lpc_entry/png/bow/WEAPON_arrow.png);
+}
 .skeleton.slash .body {
   background-image: url(../assets/lpc_entry/png/slash/BODY_skeleton.png);
 }
@@ -1367,6 +1376,9 @@
 }
 .skeleton.bow .torso-robe-shirt-brown {
   background-image: url(../assets/lpc_entry/png/bow/TORSO_robe_shirt_brown.png);
+}
+.skeleton.bow .weapon-arrow {
+  background-image: url(../assets/lpc_entry/png/bow/WEAPON_arrow.png);
 }
 .skeleton.spellcast .body {
   background-image: url(../assets/lpc_entry/png/spellcast/BODY_skeleton.png);
@@ -1620,6 +1632,29 @@
 .skeleton.dead .body.torso-robe-shirt-brown,
 .skeleton.dead .accessory.torso-robe-shirt-brown {
   background-image: url(../assets/lpc_entry/png/hurt/TORSO_robe_shirt_brown.png);
+}
+.arrow {
+  background-position: 0 0;
+  /* use same image and rotate to the direction it is flying. */
+}
+.arrow.up .body,
+.arrow.up .accessory {
+  background-position: 0 0;
+}
+.arrow.left .body,
+.arrow.left .accessory {
+  background-position: 0 -64px;
+}
+.arrow.down .body,
+.arrow.down .accessory {
+  background-position: 0 -128px;
+}
+.arrow.right .body,
+.arrow.right .accessory {
+  background-position: 0 -192px;
+}
+.arrow .body {
+  background-image: url(../assets/custom/arrow.png);
 }
 .goblin {
   /* animations */

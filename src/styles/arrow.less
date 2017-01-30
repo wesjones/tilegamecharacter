@@ -1,0 +1,17 @@
+.arrow {
+  background-position: 0 0;
+  &.up .body, &.up .accessory {
+    background-position: 0 -0;
+  }
+  &.left .body, &.left .accessory {
+    background-position: 0 -64px;
+  }
+  &.down .body, &.down .accessory {
+    background-position: 0 -128px;
+  }
+  &.right .body, &.right .accessory {
+    background-position: 0 -192px;
+  }
+  /* use same image and rotate to the direction it is flying. */
+  .body {background-image: url(../assets/custom/arrow.png);}
+}

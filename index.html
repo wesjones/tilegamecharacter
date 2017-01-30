@@ -11,7 +11,7 @@
 <b>bower:</b> <span style="border:1px solid #999;padding:2px;background:#EFEFEF;color:#333;">bower install rpg-character</span>
 
 <ul>
-    <li>Use Arrow Keys to move player (red square)</li>
+    <li>Use W,A,S,D to move player, use F for attacks and G for death.</li>
     <li>View page source for how to use.</li>
 </ul>
 
@@ -75,6 +75,8 @@
         skeleton.push(tgc.create('skeleton', skeleton.length%perRow, Math.floor(skeleton.length/perRow), keys, 0.1).addAccessory(name).addAction('slash', 70).addAction('bow', 71).addAction('spellcast', 73).addAction('hurt', 72, 'dead'));
         man.push(tgc.create('man', man.length%perRow, Math.floor(man.length/perRow) + manYOffset, keys, 0.1).addAccessory(name).addAction('slash', 70).addAction('thrust', 69).addAction('bow', 71).addAction('spellcast', 73).addAction('hurt', 72, 'dead'));
     });
+
+    //EXAMPLES OF HOW TO SETUP CHARACTERS.
 
     // cloak character.
     skeleton.push(tgc.create('skeleton', skeleton.length % perRow, Math.floor(skeleton.length / perRow), keys, 0.1).
@@ -193,13 +195,29 @@
         addAction('hurt', 72, 'dead')
     );
 
-    characters.push(tgc.create('goblin', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAccessory("weapon-knife").addAction('jab', 70).addAction('hurt', 71, 'dead'));
-    characters.push(tgc.create('golem', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAction('smash', 70).addAction('hurt', 71, 'dead'));
+    // goblin
+    var goblin = tgc.create('goblin', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAccessory("weapon-knife").addAction('jab', 70).addAction('hurt', 71, 'dead');
+    characters.push(goblin);
 
+    // golem
+    var golem = tgc.create('golem', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAction('smash', 70).addAction('hurt', 71, 'dead');
+    characters.push(golem);
+
+    // arrow
+    var arrow = tgc.create('arrow', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1);
+    characters.push(arrow);
+
+    // stuff to add them all to the page and make them visible.
     characters = characters.concat(skeleton, man);
     characters.forEach(function(char) {
-        char.on(tgc.events.ACTION_END, function(evt, action) {
+        char.on(tgc.events.ACTION_START, function(evt, char, action) {
             if (action.name === "bow") {
+                char.addAccessory('weapon-arrow');
+            }
+        });
+        char.on(tgc.events.ACTION_END, function(evt, char, action) {
+            if (action.name === "bow") {
+                char.removeAccessory('weapon-arrow');
                 console.log('shoot');
             }
         });
@@ -207,6 +225,7 @@
     });
 
 
+    // so we can triger their events.
     window.addEventListener("keydown", function(event) {
         console.log(event.keyCode);
         characters.forEach(function(char) {
