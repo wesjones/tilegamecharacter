@@ -194,6 +194,7 @@
     );
 
     characters.push(tgc.create('goblin', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAccessory("weapon-knife").addAction('jab', 70).addAction('hurt', 71, 'dead'));
+    characters.push(tgc.create('golem', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAction('smash', 70).addAction('hurt', 71, 'dead'));
 
     characters = characters.concat(skeleton, man);
     characters.forEach(function(char) {

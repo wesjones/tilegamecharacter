@@ -1,0 +1,68 @@
+.golem {
+  &.up .body, &.up .accessory {
+    background-position: -0 -0;
+  }
+  &.left .body, &.left .accessory {
+    background-position: -0px -64px;
+  }
+  &.down .body, &.down .accessory {
+    background-position: -0 -128px;
+  }
+  &.right .body, &.right .accessory {
+    background-position: -0px -192px;
+  }
+  /* animations */
+  &.walk .body, &.walk .accessory {
+    animation: golem-walk 1s steps(6) infinite;
+  }
+
+  @keyframes golem-walk {
+    to { background-position-x:-384px;}
+  }
+  @keyframes golem-smash {
+    to { background-position-x:-384px;}
+  }
+  @keyframes golem-hurt {
+    to { background-position-x:-384px;}
+  }
+
+  &.action {
+    &.smash .body, &.smash .accessory {
+      animation: golem-smash 0.5s steps(6) forwards;
+    }
+    &.hurt .body, &.hurt .accessory {
+      animation: golem-hurt 0.5s steps(6) forwards;
+    }
+  }
+
+  .body {background-image: url(../assets/golem/golem-walk.png);}
+  &.smash {
+    .body {
+      transform: translateY(-32px);
+      height: 96px;
+      background-image: url(../assets/golem/golem-atk.png);
+    }
+    &.up .body {
+      background-position: -0 -0;
+    }
+    &.left .body {
+      background-position: -0px -96px;
+    }
+    &.down .body {
+      background-position: -0 -192px;
+    }
+    &.right .body {
+      background-position: -0px -288px;
+    }
+  }
+  &.hurt, &.dead {
+    .body {background-image: url(../assets/golem/golem-die.png);}
+    &.up, &.left, &.down, &.right {
+      .body { background-position-y: -64px; }
+    }
+  }
+
+  &.dead {
+    .body { background-position: -320px -64px; }
+  }
+}

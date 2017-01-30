@@ -1667,3 +1667,86 @@
 .goblin .weapon-knife {
   background-image: url(../assets/goblin/knife.png);
 }
+.golem {
+  /* animations */
+}
+.golem.up .body,
+.golem.up .accessory {
+  background-position: 0 0;
+}
+.golem.left .body,
+.golem.left .accessory {
+  background-position: 0px -64px;
+}
+.golem.down .body,
+.golem.down .accessory {
+  background-position: 0 -128px;
+}
+.golem.right .body,
+.golem.right .accessory {
+  background-position: 0px -192px;
+}
+.golem.walk .body,
+.golem.walk .accessory {
+  animation: golem-walk 1s steps(6) infinite;
+}
+@keyframes golem-walk {
+  to {
+    background-position-x: -384px;
+  }
+}
+@keyframes golem-smash {
+  to {
+    background-position-x: -384px;
+  }
+}
+@keyframes golem-hurt {
+  to {
+    background-position-x: -384px;
+  }
+}
+.golem.action.smash .body,
+.golem.action.smash .accessory {
+  animation: golem-smash 0.5s steps(6) forwards;
+}
+.golem.action.hurt .body,
+.golem.action.hurt .accessory {
+  animation: golem-hurt 0.5s steps(6) forwards;
+}
+.golem .body {
+  background-image: url(../assets/golem/golem-walk.png);
+}
+.golem.smash .body {
+  transform: translateY(-32px);
+  height: 96px;
+  background-image: url(../assets/golem/golem-atk.png);
+}
+.golem.smash.up .body {
+  background-position: 0 0;
+}
+.golem.smash.left .body {
+  background-position: 0px -96px;
+}
+.golem.smash.down .body {
+  background-position: 0 -192px;
+}
+.golem.smash.right .body {
+  background-position: 0px -288px;
+}
+.golem.hurt .body,
+.golem.dead .body {
+  background-image: url(../assets/golem/golem-die.png);
+}
+.golem.hurt.up .body,
+.golem.dead.up .body,
+.golem.hurt.left .body,
+.golem.dead.left .body,
+.golem.hurt.down .body,
+.golem.dead.down .body,
+.golem.hurt.right .body,
+.golem.dead.right .body {
+  background-position-y: -64px;
+}
+.golem.dead .body {
+  background-position: -320px -64px;
+}
