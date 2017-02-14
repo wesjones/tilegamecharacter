@@ -17,6 +17,209 @@
   background-position: 0 0;
   z-index: 1;
 }
+.arrow {
+  background-position: 0 0;
+  /* use same image and rotate to the direction it is flying. */
+}
+.arrow.up .body,
+.arrow.up .accessory {
+  background-position: 0 0;
+}
+.arrow.left .body,
+.arrow.left .accessory {
+  background-position: 0 -64px;
+}
+.arrow.down .body,
+.arrow.down .accessory {
+  background-position: 0 -128px;
+}
+.arrow.right .body,
+.arrow.right .accessory {
+  background-position: 0 -192px;
+}
+.arrow .body {
+  background-image: url(../assets/custom/arrow.png);
+}
+.explosion-sml .body {
+  top: 0;
+  left: 16px;
+  height: 64px;
+  width: 32px;
+  background-position: 0 0;
+}
+.explosion-sml.action.explode .body,
+.explosion-sml.action.explode .accessory {
+  animation: explode-sml 1s steps(7) forwards;
+}
+@keyframes explode-sml {
+  to {
+    background-position-x: -224px;
+  }
+}
+.explosion-sml .body {
+  background-image: url(../assets/explosion/explosion.png);
+}
+.explosion .body {
+  top: -64px;
+  height: 128px;
+  background-position: 0 0;
+  background-size: 512px 128px;
+}
+.explosion.action.explode .body,
+.explosion.action.explode .accessory {
+  animation: explode 1s steps(7) forwards;
+}
+@keyframes explode {
+  to {
+    background-position-x: -448px;
+  }
+}
+.explosion .body {
+  background-image: url(../assets/explosion/explosion.png);
+}
+.goblin {
+  /* animations */
+}
+.goblin.down .body,
+.goblin.down .accessory {
+  background-position: 0 0;
+}
+.goblin.right .body,
+.goblin.right .accessory {
+  background-position: 0px -64px;
+}
+.goblin.up .body,
+.goblin.up .accessory {
+  background-position: 0 -128px;
+}
+.goblin.left .body,
+.goblin.left .accessory {
+  background-position: 0px -192px;
+}
+.goblin.walk .body,
+.goblin.walk .accessory {
+  animation: goblin-walk 0.5s steps(7) infinite;
+}
+@keyframes goblin-walk {
+  to {
+    background-position-x: -448px;
+  }
+}
+@keyframes goblin-slash {
+  0% {
+    background-position-x: -520px;
+  }
+  100% {
+    background-position-x: -712px;
+  }
+}
+@keyframes goblin-hurt {
+  to {
+    background-position-x: -256px;
+  }
+}
+.goblin.action.jab .body,
+.goblin.action.jab .accessory {
+  animation: goblin-slash 0.5s steps(3) forwards;
+}
+.goblin.action.hurt .body,
+.goblin.action.hurt .accessory {
+  background-position-y: -256px;
+  animation: goblin-hurt 0.5s steps(4) forwards;
+}
+.goblin.dead .body,
+.goblin.dead .accessory {
+  background-position: -256px -256px;
+}
+.goblin .body {
+  background-image: url(../assets/goblin/goblin.png);
+}
+.goblin .weapon-knife {
+  background-image: url(../assets/goblin/knife.png);
+}
+.golem {
+  /* animations */
+}
+.golem.up .body,
+.golem.up .accessory {
+  background-position: 0 0;
+}
+.golem.left .body,
+.golem.left .accessory {
+  background-position: 0px -64px;
+}
+.golem.down .body,
+.golem.down .accessory {
+  background-position: 0 -128px;
+}
+.golem.right .body,
+.golem.right .accessory {
+  background-position: 0px -192px;
+}
+.golem.walk .body,
+.golem.walk .accessory {
+  animation: golem-walk 1s steps(6) infinite;
+}
+@keyframes golem-walk {
+  to {
+    background-position-x: -384px;
+  }
+}
+@keyframes golem-smash {
+  to {
+    background-position-x: -384px;
+  }
+}
+@keyframes golem-hurt {
+  to {
+    background-position-x: -384px;
+  }
+}
+.golem.action.smash .body,
+.golem.action.smash .accessory {
+  animation: golem-smash 0.5s steps(6) forwards;
+}
+.golem.action.hurt .body,
+.golem.action.hurt .accessory {
+  animation: golem-hurt 0.5s steps(6) forwards;
+}
+.golem .body {
+  background-image: url(../assets/golem/golem-walk.png);
+}
+.golem.smash .body {
+  transform: translateY(-32px);
+  height: 96px;
+  background-image: url(../assets/golem/golem-atk.png);
+}
+.golem.smash.up .body {
+  background-position: 0 0;
+}
+.golem.smash.left .body {
+  background-position: 0px -96px;
+}
+.golem.smash.down .body {
+  background-position: 0 -192px;
+}
+.golem.smash.right .body {
+  background-position: 0px -288px;
+}
+.golem.hurt .body,
+.golem.dead .body {
+  background-image: url(../assets/golem/golem-die.png);
+}
+.golem.hurt.up .body,
+.golem.dead.up .body,
+.golem.hurt.left .body,
+.golem.dead.left .body,
+.golem.hurt.down .body,
+.golem.dead.down .body,
+.golem.hurt.right .body,
+.golem.dead.right .body {
+  background-position-y: -64px;
+}
+.golem.dead .body {
+  background-position: -320px -64px;
+}
 .man {
   /* 192x192 images */
   /* animations */
@@ -228,6 +431,7 @@
 }
 .man.action.hurt .body,
 .man.action.hurt .accessory {
+  background-position-y: 0px;
   animation: man-hurt 1s steps(6) forwards;
 }
 .man .body {
@@ -1036,6 +1240,7 @@
 }
 .skeleton.action.hurt .body,
 .skeleton.action.hurt .accessory {
+  background-position-y: 0px;
   animation: skeleton-hurt 1s steps(6) forwards;
 }
 .skeleton .body {
@@ -1632,156 +1837,4 @@
 .skeleton.dead .body.torso-robe-shirt-brown,
 .skeleton.dead .accessory.torso-robe-shirt-brown {
   background-image: url(../assets/lpc_entry/png/hurt/TORSO_robe_shirt_brown.png);
-}
-.arrow {
-  background-position: 0 0;
-  /* use same image and rotate to the direction it is flying. */
-}
-.arrow.up .body,
-.arrow.up .accessory {
-  background-position: 0 0;
-}
-.arrow.left .body,
-.arrow.left .accessory {
-  background-position: 0 -64px;
-}
-.arrow.down .body,
-.arrow.down .accessory {
-  background-position: 0 -128px;
-}
-.arrow.right .body,
-.arrow.right .accessory {
-  background-position: 0 -192px;
-}
-.arrow .body {
-  background-image: url(../assets/custom/arrow.png);
-}
-.goblin {
-  /* animations */
-}
-.goblin.down .body,
-.goblin.down .accessory {
-  background-position: 0 0;
-}
-.goblin.right .body,
-.goblin.right .accessory {
-  background-position: 0px -64px;
-}
-.goblin.up .body,
-.goblin.up .accessory {
-  background-position: 0 -128px;
-}
-.goblin.left .body,
-.goblin.left .accessory {
-  background-position: 0px -192px;
-}
-.goblin.walk .body,
-.goblin.walk .accessory {
-  animation: goblin-walk 0.5s steps(7) infinite;
-}
-@keyframes goblin-walk {
-  to {
-    background-position-x: -448px;
-  }
-}
-@keyframes goblin-slash {
-  0% {
-    background-position-x: -520px;
-  }
-  100% {
-    background-position-x: -712px;
-  }
-}
-.goblin.action.jab .body,
-.goblin.action.jab .accessory {
-  animation: goblin-slash 0.5s steps(3) forwards;
-}
-.goblin .body {
-  background-image: url(../assets/goblin/goblin.png);
-}
-.goblin .weapon-knife {
-  background-image: url(../assets/goblin/knife.png);
-}
-.golem {
-  /* animations */
-}
-.golem.up .body,
-.golem.up .accessory {
-  background-position: 0 0;
-}
-.golem.left .body,
-.golem.left .accessory {
-  background-position: 0px -64px;
-}
-.golem.down .body,
-.golem.down .accessory {
-  background-position: 0 -128px;
-}
-.golem.right .body,
-.golem.right .accessory {
-  background-position: 0px -192px;
-}
-.golem.walk .body,
-.golem.walk .accessory {
-  animation: golem-walk 1s steps(6) infinite;
-}
-@keyframes golem-walk {
-  to {
-    background-position-x: -384px;
-  }
-}
-@keyframes golem-smash {
-  to {
-    background-position-x: -384px;
-  }
-}
-@keyframes golem-hurt {
-  to {
-    background-position-x: -384px;
-  }
-}
-.golem.action.smash .body,
-.golem.action.smash .accessory {
-  animation: golem-smash 0.5s steps(6) forwards;
-}
-.golem.action.hurt .body,
-.golem.action.hurt .accessory {
-  animation: golem-hurt 0.5s steps(6) forwards;
-}
-.golem .body {
-  background-image: url(../assets/golem/golem-walk.png);
-}
-.golem.smash .body {
-  transform: translateY(-32px);
-  height: 96px;
-  background-image: url(../assets/golem/golem-atk.png);
-}
-.golem.smash.up .body {
-  background-position: 0 0;
-}
-.golem.smash.left .body {
-  background-position: 0px -96px;
-}
-.golem.smash.down .body {
-  background-position: 0 -192px;
-}
-.golem.smash.right .body {
-  background-position: 0px -288px;
-}
-.golem.hurt .body,
-.golem.dead .body {
-  background-image: url(../assets/golem/golem-die.png);
-}
-.golem.hurt.up .body,
-.golem.dead.up .body,
-.golem.hurt.left .body,
-.golem.dead.left .body,
-.golem.hurt.down .body,
-.golem.dead.down .body,
-.golem.hurt.right .body,
-.golem.dead.right .body {
-  background-position-y: -64px;
-}
-.golem.dead .body {
-  background-position: -320px -64px;
 }

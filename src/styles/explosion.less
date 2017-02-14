@@ -1,0 +1,35 @@
+.explosion-sml {
+  .body {
+    top: 0;
+    left: 16px;
+    height: 64px;
+    width: 32px;
+    background-position: 0 0;
+  }
+  &.action {
+    &.explode .body, &.explode .accessory {
+      animation: explode-sml 1s steps(7) forwards;
+    }
+  }
+  @keyframes explode-sml {
+    to { background-position-x:-224px;}
+  }
+  .body {background-image: url(../assets/explosion/explosion.png);}
+}
+.explosion {
+  .body {
+    top: -64px;
+    height: 128px;
+    background-position: 0 0;
+    background-size: 512px 128px;
+  }
+  &.action {
+    &.explode .body, &.explode .accessory {
+      animation: explode 1s steps(7) forwards;
+    }
+  }
+  @keyframes explode {
+    to { background-position-x:-448px;}
+  }
+  .body {background-image: url(../assets/explosion/explosion.png);}
+}

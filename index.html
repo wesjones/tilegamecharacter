@@ -15,7 +15,7 @@
     <li>View page source for how to use.</li>
 </ul>
 
-<div class="container" style="margin: 40px;position: relative;"></div>
+<div class="container" style="margin: 0 20px;position: relative;"></div>
 <script>
 
     var perRow = 10;
@@ -196,11 +196,11 @@
     );
 
     // goblin
-    var goblin = tgc.create('goblin', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAccessory("weapon-knife").addAction('jab', 70).addAction('hurt', 71, 'dead');
+    var goblin = tgc.create('goblin', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAccessory("weapon-knife").addAction('jab', 70).addAction('hurt', 72, 'dead');
     characters.push(goblin);
 
     // golem
-    var golem = tgc.create('golem', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAction('smash', 70).addAction('hurt', 71, 'dead');
+    var golem = tgc.create('golem', characters.length % perRow, Math.floor(characters.length / perRow) + manYOffset*2, keys, 0.1).addAction('smash', 70).addAction('hurt', 72, 'dead');
     characters.push(golem);
 
     // arrow
@@ -228,6 +228,26 @@
     // so we can triger their events.
     window.addEventListener("keydown", function(event) {
         console.log(event.keyCode);
+        var container = document.querySelector(".container");
+
+        function removeChar(evt, char, action) {
+            char.off(tgc.events.ACTION_END, removeChar);
+            characters.splice(characters.indexOf(char), 1);
+            container.removeChild(char.el);
+        }
+
+        function makeChar(name) {
+            var char = tgc.create(name, characters.length % perRow, Math.floor(characters.length / perRow) + 1, [], 0).addAction('explode', 70);
+            char.on(tgc.events.ACTION_END, removeChar);
+            char.el.style.top = char.y * tileSize + "px";
+            char.el.style.left = char.x * tileSize + "px";
+            characters.push(char);
+            container.appendChild(char.el);
+        }
+
+        makeChar('explosion-sml');
+        makeChar('explosion');
+
         characters.forEach(function(char) {
             char.handleKeyDown(event.keyCode);
         });
