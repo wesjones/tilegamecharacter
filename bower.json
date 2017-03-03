@@ -1,6 +1,7 @@
 {
   "name": "tilegamecharacter",
   "description": "Tile Game Character",
+  "version": "0.1.0",
   "main": "index.html",
   "authors": [
     "Wes Jones <cybus10@gmail.com>"
@@ -11,7 +12,7 @@
     "rpg",
     "character"
   ],
-  "homepage": "https://github.com/wesjones/rpg-character",
+  "homepage": "https://github.com/wesjones/tilegamecharacter",
   "private": false,
   "ignore": [
     "**/.*",
