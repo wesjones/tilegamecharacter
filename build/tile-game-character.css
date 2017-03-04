@@ -7,11 +7,11 @@
   background-color: rgba(255, 0, 0, 0.5);
 }
 .x32 .character {
-  -webkit-transform: scale(0.5, 0.5);
-  -moz-transform: scale(0.5, 0.5);
-  -ms-transform: scale(0.5, 0.5);
-  -o-transform: scale(0.5, 0.5);
-  transform: scale(0.5, 0.5);
+  -webkit-transform: scale(0.5, 0.5) translate(-50%, -50%);
+  -moz-transform: scale(0.5, 0.5) translate(-50%, -50%);
+  -ms-transform: scale(0.5, 0.5) translate(-50%, -50%);
+  -o-transform: scale(0.5, 0.5) translate(-50%, -50%);
+  transform: scale(0.5, 0.5) translate(-50%, -50%);
 }
 .body,
 .accessory {
