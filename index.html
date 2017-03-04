@@ -15,12 +15,12 @@
     <li>View page source for how to use.</li>
 </ul>
 
-<div class="container" style="margin: 0 20px;position: relative;"></div>
+<div class="container x32" style="margin: 0 20px;position: relative;"></div>
 <script>
 
     var perRow = 10;
     var manYOffset = 4;
-    var tileSize = 64;
+    var tileSize = document.querySelector('.container').classList.contains('x64') ? 64 : 32;
     var keys = [87, 68, 83, 65];/* W,  A,  S,  D,  F,  E */
     var skeleton = [];
     var man = [];
